@@ -1,10 +1,3 @@
-/*
-$(function(){
-    $(window).on('load',function(){
-        logo.delay(500).fadein(1000);
-    })  
-});
-*/
 $(window).load(function () {
     var img = $("#slideshow").children("img"),
         num = img.length,
