@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Document</title>
 
-<script src=".https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="./js/home.js"></script>
 <link href="./css/index.css" rel="stylesheet" type="text/css">
 </head>
@@ -31,9 +31,9 @@
     </div>
 </div>
 <div id="slideshow" class="slideshow">
-    <img src="./images/img_01.jpg" alt="">
-    <img src="./images/img_14.jpg" alt="">
-    <img src="./images/img_15.jpg" alt="">
+    <img src="./images/img_01.jpg" width="100%" height="1000" alt="">
+    <img src="./images/img_14.jpg" width="100%" height="1000" alt="">
+    <img src="./images/img_15.jpg" width="100%" height="1000" alt="">
 </div>
 
 <div id="news">
@@ -44,7 +44,7 @@
             <dl id="acMenu">
                 <?php foreach ($csv as $item) { ?>
                 <dt><?php echo $item[1];?></dt>
-                <dd><?php echo $item[2];?></dd>
+                <dd><?php echo $item[0].PHP_EOL."-".PHP_EOL.$item[2];?></dd>
                 <?php } ?>
             </dl>
         </div>
