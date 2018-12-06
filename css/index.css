@@ -8,13 +8,13 @@ body{
 	scroll-behavior:smooth;
 }
 #wrapper{
-	width:1263px;
+	width:100%;
 	height:auto;
 	background-image:url("../images/background.jpeg");
 	background-repeat:repeat;
 }
 #header{
-	width:1263px;
+	width: 100%;
 	height:80px;
 	background-color:#fff;
 	opacity:0.9;
@@ -29,7 +29,7 @@ body{
 	float:left
 }
 #navi{
-	width:750px;
+	width:auto;
 	height:80px;
 	float:right;
 }
@@ -77,13 +77,13 @@ a:hover{
 }
 .bt{
 	position:fixed;
-	left:1200px;
-	top:606px;
+	left:1600px;
+	top:780px;
 }
 /*ホーム*/
 .slideshow {
 	position: relative;
-	width:1263px;
+	width:100%;
 	height:686px;
 }
 .slideshow img {
@@ -107,7 +107,7 @@ a:hover{
 }
 /*お知らせ*/
 #news{
-	width:1263px;
+	width:100%;
 	height:400px;
 	background-color:#fff;
 	padding-top:10px;
@@ -164,13 +164,13 @@ dt:hover{
 	display:none;
 }
 .length{
-	width:1263px;
+	width:100%;
 	height:80px;
 	background-color:#fff;
 }
 /*いずも庵について*/
 #izumo_img{
-	width:1263px;
+	width:100%;
 	height:606px;
 	background-image:url("../images/img_03.jpg");
 	background-size: cover;
@@ -184,7 +184,7 @@ dt:hover{
 	line-height: 2.5em
 }
 #izumo_info2{
-	width:1263px;
+	width:100%;
 	height:500px;
 	background-color:white;
 	padding-top:30px;
@@ -237,7 +237,7 @@ dt:hover{
 }
 /*メニュー*/
 #menu_midashi{
-	width:1263px;
+	width:100%;
 	height:406px;
 	margin-top:100px;
 	margin-bottom:100px;
@@ -248,9 +248,10 @@ dt:hover{
 	line-height: 2.5em
 }
 #menu_wrapper{
-	width:1263px;
+	width:100%;
 	height:566px;
 	padding-top:30px;
+	padding-left: 210px;
 	background-color:white;
 }
 #menu_con1,#menu_con2,#menu_con3{
@@ -270,12 +271,12 @@ dt:hover{
 	width:100px;
 	height:200px;
 	position:absolute;
-	z-index:1;
+	z-index:100;
 	background-color:#000;
-	left:550px;;
-	margin-top:50px;
+	left:750px;
+	margin-top:80px;
 	padding-right:20px;
-	writing-mode: vertical-rl;
+	/*なぜか縦書きできない*/
 	color:white;
 }
 #access_wrapper{
@@ -320,7 +321,7 @@ dt:hover{
 }
 
 #cr{
-	width:1263px;
+	width:100%;
 	height:30px;
 	background-color:#000;
 	color:white;
@@ -328,7 +329,7 @@ dt:hover{
 }
 /*フッター*/
 #footer{
-	width:1263px;
+	width:100%;
 	height:200px;
 	margin-top:80px;
 	background-color:#fff;
@@ -360,7 +361,7 @@ dt:hover{
 }
 /*お問い合わせ*/
 .dummy{
-	width:1263px;
+	width:100%;
 	height:150px;
 }
 .ant_midashi{
@@ -406,7 +407,7 @@ input:hover{
 }
 #k_nav{
 	height:50px;
-	width:1263px;
+	width:100%;
 }
 .a_link{
 	float:right;
