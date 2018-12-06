@@ -34,30 +34,28 @@
 		<div id="ant_con">
         	<p>当店へのお問い合わせは、以下のフォームをご利用ください。<br><font color="red">*</font>は必須入力です。</p>
 			<hr class="mar">
-
 			<form action="ant.php" method="GET">
-
 			お名前<font color="red">*</font><br>
-			<input type="text" placeholder="出雲 庵" style="border-style:none;" name="name"  size="97" value="">
 			<hr><br>
-
 			ふりがな<br>
-			<input type="text" placeholder="いづも あん" style="border-style:none;" name="kana"  size="97" value="">
 			<hr><br>
-
 			お電話番号<br>
-			<input type="text" placeholder="09012345678" style="border-style:none;" name="number"  size="97" value="">
 			<hr><br>
-
 			メールアドレス<font color="red">*</font><br>
-			<input type="email" placeholder="example@izumo-an.con" style="border-style:none;" name="email"  size="97" value="">
 			<hr><br>
-
 			お問い合わせ内容<font color="red">*</font><br>
-			<textarea name="message" rows="10" cols="71"></textarea>
 			<br>
+			<input type="hidden" name="cnt" value="">
 
-			<center><input class="submit_bt" type="submit" name="confilm" value="入力内容で確認する"></center>
+
+			<center><input class="submit_bt" type="submit" name="submit" value="送信する"></center>
+
+			<INPUT type="hidden" name="namer" value="">
+			<INPUT type="hidden" name="kanar" value="">
+			<INPUT type="hidden" name="numberr" value="">
+			<INPUT type="hidden" name="emailr" value="">
+			<INPUT type="hidden" name="messager" value="">
+			<center><input class="submit_bt" type="submit" name="back" value="入力画面に戻る"></center>
 			</form>
 		</div>
 	</div>
