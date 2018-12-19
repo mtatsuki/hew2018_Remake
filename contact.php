@@ -1,34 +1,64 @@
-<?php if (!empty($_GET["cnt"]) or !empty($_GET["submit"])) {
-    if (!empty($_GET['cnt']) == 4) {
-        echo "<center><strong>送信が完了しました。</strong></center><BR>\n";
-        /*書き込み*/
-        if (!empty($_GET["kanar"])) {
-                $kana =$_GET["kanar"];
-        } else {
-                $kana = '未入力';
-        }
-        if (!empty($_GET["numberr"])) {
-                $number =$_GET["numberr"];
-        } else {
-                $number = '未入力';
-        }
+<?php
+session_start();
+//表示データ初期化
+$prof = array(
+    'name' => '',
+    'kana' => '',
+    'tel' => '',
+    'mail' => '',
+    'message' =>'',
+);
 
-        date_default_timezone_set('Asia/Tokyo');
-        $year = date("Y/m/d");
-        $hour = date("H:i");
-        $message = str_replace("\n", "\t", $_GET["messager"]);
-        $fp = fopen('ant_data.csv', 'a');
-        fwrite($fp, $year.",".$hour.",".$_GET["namer"].",".$kana.",".$number.",".$_GET["emailr"].",".$message."\n");
-        fclose($fp);
-    } else {
-        echo "未入力の項目があります<BR>\n";
+$err_msg = array(
+    'name' => '',
+    'kana' => '',
+    'tel' => '',
+    'mail' => '',
+    'message' =>'',
+);
+
+if (!empty($_POST) && isset($_POST['state']) && $_POST['state'] == 'confilm') {
+    //入力された値を取得
+    foreach ($prof as $key => $value) {
+        $prof[$key] = $_POST[$key];
     }
-}
-if (empty($_GET) or !empty($_GET["submit"]) or !empty($_GET["back"])) {
-}
 
-if (!empty($_GET["confilm"])) {
-    $count=1;
+    //入力値チェック
+    $err_flg = 0;
+    //氏名
+    if ($prof['name'] == '') {
+        $err_msg['name'] = 'お名前が入力されていません。';
+        $err_flg = 1;
+    }
+
+    //メールアドレス
+    if ($prof['mail'] == '') {
+        $err_msg['mail'] = 'メールアドレスが入力されていません。';
+        $err_flg = 1;
+    } elseif (strpos($prof['mail'], '@') == false) {
+        $err_msg['mail'] = '正しいメールの形式で入力してください';
+        $err_flg = 1;
+    }
+
+    //お問い合わせ内容
+    if ($prof['message'] == '') {
+        $err_msg['message'] = '問い合わせ内容が入力されていません。';
+        $err_flg = 1;
+    }
+
+    if ($err_flg == 0) {
+        $_SESSION['prof'] = $prof;
+        header("location:confilm.php");
+    }
+} elseif (!empty($_SESSION) && isset($_SESSION['prof']) && isset($_POST['state']) && $_POST['state'] == 'back') {
+    $prof = $_SESSION['prof'];
+
+
+    foreach ($prof as $key => $value) {
+        if (!isset($err_msg[$key])) {
+            $err_msg[$key] = '';
+        }
+    }
 }
 
 require_once "./tpl/contact.php";
