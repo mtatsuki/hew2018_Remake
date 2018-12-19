@@ -25,7 +25,7 @@
             <li class="navi2"><a href="#izumo_info_top">いづも庵について</a></li>
             <li class="navi3"><a href="#izumo_menu_top">メニュー</a></li>
             <li class="navi4"><a href="#izumo_access_top">店舗案内</a></li>
-            <li class="navi5"><a href="ant.php">お問い合わせ</a></li>
+            <li class="navi5"><a href="contact.php">お問い合わせ</a></li>
             </ul>
 
     </div>
